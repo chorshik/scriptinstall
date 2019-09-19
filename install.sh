@@ -12,4 +12,8 @@ _update
 echo_info "Installing packages..."
 _install "${PKGS[@]}"
 
+echo_info "Instaling files..."
+_run_install_files
+
 . special_installs.sh # run special installation steps
+

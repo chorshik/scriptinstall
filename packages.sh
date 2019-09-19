@@ -6,7 +6,5 @@ export PKGS=(
 	pulseaudio-alsa
 	pulseaudio-bluetooth
 	pulsemixer
-	bluez
-	bluez-utils
-	blueman
+	ttf-hack
 )

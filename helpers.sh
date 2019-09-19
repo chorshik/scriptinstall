@@ -33,3 +33,11 @@ function _update() {
   "$PKGMN" "$PKGU" "$1" "${PKGOPT[@]}"
   echo_success "Updated $1"
 }
+
+function _run_install_files() {
+  for filename in $(echo $HOME/.dotfiles/**/install.sh | tr " " "\n")
+  do
+    source $filename
+  done
+}
+

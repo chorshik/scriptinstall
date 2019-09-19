@@ -1,0 +1,251 @@
+M O D U L E S
+				 					
+[module/sp1]
+type = custom/text
+content = " "
+content-foreground = ${colors.foreground-alt}
+content-background = ${colors.background-alt}
+
+[module/sp2]
+type = custom/text
+content =" | "
+
+content-foreground = #93A1A1
+content-background = ${colors.background-alt}
+
+[module/xkeyboard]
+type = internal/xkeyboard
+blacklist-0 = num lock
+blacklist-1 = scroll lock
+
+
+label-indicator-padding = 0
+label-indicator-margin = 0
+label-indicator = " CAPS "
+label-indicator-foreground = ${colors.foreground}
+label-indicator-background = ${colors.alert}
+
+label-layout = %layout%
+label-layout-font = 1
+label-layout-foreground = ${colors.foreground-alt}
+label-layout-background = ${colors.background-alt}
+
+[module/i3]
+type = internal/i3
+format = <label-state><label-mode>
+
+index-sort = false
+enable-click = true 
+enable-scroll = false
+;-------------------------------------------
+ws-icon-0 = 10;10
+ws-icon-1 = 1;1
+ws-icon-2 = 2;2 
+ws-icon-3 = 3;3
+ws-icon-4 = 4;4
+ws-icon-5 = 5;5
+ws-icon-6 = 6;6
+ws-icon-7 = 7;7 
+ws-icon-8 = 8;8
+ws-icon-9 = 9;9 
+ws-icon-default = 
+
+; Only show workspaces on the same output as the bar
+pin-workspaces = true 
+
+label-mode = " %mode% "
+label-mode-background = ${colors.background}
+
+; focused = Active workspace on focused monitor
+label-focused =  %icon% 
+label-focused-foreground = ${colors.foreground}
+label-focused-background = ${colors.background}
+label-focused-padding = 1 
+
+; visible = Active workspace on unfocused monitor
+label-visible = " %icon% "
+label-visible-foreground = ${colors.foreground-alt}
+label-visible-background = ${colors.background-alt}
+
+; unfocused = Inactive workspace on any monitor
+label-unfocused = " %icon% "
+label-unfocused-foreground = ${colors.foreground-alt}
+label-unfocused-background = ${colors.background-alt}
+label-unfocused-padding = 0 
+
+; urgent = Workspace with urgency hint set
+label-urgent = " %icon% "
+label-urgent-foreground = ${colors.red}
+label-urgent-background = ${colors.blue}
+label-urgent-padding = 0 
+
+;Separator in between workspaces
+;label-separator-padding = 0
+;label-separator-foreground = ${colors.red}
+;label-separator-background = ${colors.background}
+
+[module/cpu]
+type = internal/cpu
+interval = 2
+label = %percentage%%   
+label-foreground = ${colors.foreground-alt}
+label-background = ${colors.background-alt}
+
+[module/memory]
+type = internal/memory
+interval = 2
+label = %gb_used%
+label-foreground = ${colors.foreground-alt}
+label-background = ${colors.background-alt}
+
+
+[module/date]
+type = internal/date
+interval = 1
+
+;date = "   %d.%m.%y   "
+time= %a  %I:%M %p
+
+label =  %time% %date%
+label-foreground = ${colors.foreground-alt}
+label-background = ${colors.background-alt}
+
+[module/volume]
+type = internal/volume
+
+; mapping = true
+format-volume = <ramp-volume><label-volume>
+
+label-volume = %percentage%%
+label-volume-foreground = ${colors.foreground-alt}
+label-volume-background = ${colors.background-alt}
+label-muted = ""
+label-muted-foreground = ${colors.foreground-alt}
+label-muted-background = ${colors.background-alt}
+
+ramp-volume-0 = " "
+ramp-volume-0-foreground = ${colors.foreground-alt}
+ramp-volume-0-background = ${colors.background-alt}
+ramp-volume-1 = " "
+ramp-volume-1-foreground = ${colors.foreground-alt}
+ramp-volume-1-background = ${colors.background-alt}
+ramp-volume-2 = " "
+ramp-volume-2-foreground = ${colors.foreground-alt}
+ramp-volume-2-background = ${colors.background-alt}
+ramp-volume-3 = " "
+ramp-volume-3-foreground = ${colors.foreground-alt}
+ramp-volume-3-background = ${colors.background-alt}
+
+[module/title]
+type = internal/xwindow
+
+format-background = ${colors.background-alt}
+format-foreground = ${colors.foreground-alt}
+format-padding = 1
+
+label-maxlen = 60
+
+[module/wlan]
+type = internal/network
+interface = wlp7s0
+interval = 3.0
+
+format-connected-prefix = " "
+format-connected-prefix-foreground = ${colors.foreground-alt}
+label-connected = %essid%
+
+format-disconnected = 
+label-disconnected = %ifname% disconnected
+label-disconnected-foreground = ${colors.foreground-alt}
+
+[module/openvpn]
+type = internal/network
+interface = tun0
+interval = 3.0
+
+format-connected-prefix = "tun0: "
+format-connected-prefix-foreground = ${colors.foreground-alt}
+label-connected = on
+
+format-disconnected-prefix = "tun0: "
+format-disconnected-prefix-foreground = ${colors.foreground-alt}
+label-disconnected = off
+
+[module/eth]
+type = internal/network
+interface = eth0
+interval = 3.0
+
+format-connected-underline = #55aa55
+format-connected-prefix = " "
+format-connected-prefix-foreground = ${colors.foreground-alt}
+label-connected = %local_ip%
+
+format-disconnected =
+
+[module/battery]
+type = internal/battery
+battery = BAT0
+adapter = ADP1
+full-at = 98
+
+format-charging-prefix = "⚡  " 
+format-charging-prefix-foreground = ${colors.foreground-alt}
+
+format-discharging-prefix = " "
+format-discharging-prefix-foreground = ${colors.foreground-alt}
+
+format-full-prefix = " "
+format-full-prefix-foreground = ${colors.foreground-alt}
+
+;[module/battery0]
+;type = internal/battery
+;battery = BAT0
+;adapter = ADP1
+;full-at = 98
+;
+;format-charging = "<animation-charging><label-charging>"
+;format-charging-underline = ${colors.foreground}
+;label-charging-foreground = ${colors.foreground-alt}
+;label-charging-background = ${colors.background-alt}
+;
+;format-discharging = "<ramp-capacity><label-discharging>"
+;;format-discharging-underline = ${self.format-charging-underline}
+;label-discharging-foreground = ${colors.foreground-alt}
+;label-discharging-background = ${colors.background-alt}
+;
+;format-full-prefix = " "
+;format-full-prefix-foreground = ${colors.foreground-alt}
+;format-full-prefix-background = ${colors.background-alt}
+;format-full-underline = ${self.format-charging-underline}
+;
+;ramp-capacity-0 = " "
+;ramp-capacity-0-foreground = ${colors.alert}
+;ramp-capacity-1 = " "
+;ramp-capacity-2 = " "
+;ramp-capacity-foreground = ${colors.foreground-alt}
+;ramp-capacity-background = ${colors.background-alt}
+;
+;animation-charging-0 = " "
+;animation-charging-1 = " "
+;animation-charging-2 = " "
+;animation-charging-foreground = ${colors.foreground-alt}
+;animation-charging-background = ${colors.background-alt}
+;animation-charging-framerate = 750
+
+[module/filesystem]
+type = internal/fs
+interval = 25
+
+mount-0 = /
+
+;           📸📸📸⚡     
+
+label-mounted = " %free%"
+label-mounted-background = ${colors.background-alt}
+label-unmounted = %mountpoint% not mounted
+label-unmounted-foreground = ${colors.foreground-alt}
+label-unmounted-background = ${colors.background-alt}
+
+
+

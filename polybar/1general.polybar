@@ -1,0 +1,105 @@
+###############################################
+V A R I A B L E S
+
+[colors]
+
+background = #BCC3C3
+background-alt = #002B36
+foreground = #002B36
+foreground-alt = #BCC3C3
+primary = #ffb52a
+secondary = #e60053
+alert = #FF0000
+
+
+dark = #073642 ### - SOLARIZED DARK LIGHT
+medium = #657b83
+light = #fdf6e3
+white = #fff
+red = #f00
+black = #000
+blue = #268bd2
+violet = #8e1eff
+
+###############################################
+B A R S
+										
+[bar/bar-top]
+monitor=${env:MONITOR:}
+width = 100%
+height = 24 
+radius = 0.0
+fixed-center = true
+bottom = no
+
+foreground = ${colors.foreground-alt}
+background = ${colors.background-alt}
+
+line-size = 2 
+line-color = #dfdfdf
+
+border-top-size = 0
+border-bottom-size = 1
+border-left-size = 0
+border-right-size = 0 
+
+border-color = #000000
+
+padding-left = 0
+padding-right = 0
+
+module-margin-left = 0
+module-margin-right = 0
+
+;font-0 = Iosevka:style=Medium:pixelsize=10;1
+;font-1 = Icons:style=Iconic:pixelsize=9;2
+;font-2 = Font Awesome 5 Free:style=Solid:pixelsize=9;1
+;font-3 = Noto Sans CJK JP:style=Medium:pixelsize=9;1
+
+font-0 = Hack:pixelsize=9;3
+font-1 = "Wuncon Siji:pixelsize=10;3"
+font-2 = FontAwesome5Free:style=Solid:pixelsize=10;3
+font-3 = FontAwesome5Brands:style=Solid:pixelsize=10;3
+
+modules-left = i3
+modules-center = date
+modules-right = sp1 filesystem sp2 xkeyboard sp2 volume sp2 memory sp2 wlan sp2  battery sp2
+
+tray-position = right
+tray-padding = 0
+tray-detached = false
+tray-maxsize = 14
+tray-scale = 1.0
+tray-background = ${colors.background-alt}
+tray-foreground = ${colors.foreground-alt}
+tray-offset-x = 0
+tray-offset-y = 0
+
+wm-restak = i3
+
+;scroll-up = i3wm-wsnext
+;scroll-down = i3wm-wsprev
+
+cursor-click = pointer
+
+#########################################
+G O V N O
+
+[settings]
+screenchange-reload = true
+throttle-output = 5
+throttle-output-for = 10
+throttle-input-for = 30
+compositing-background = over
+compositing-foreground = over
+compositing-overline = over
+compositing-border = over
+
+[global/wm]
+margin-top = 5 
+margin-bottom = 5
+
+#########################################
+
+
+
